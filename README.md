@@ -1,8 +1,8 @@
-#Apartment rentals REST API backend server
+# Apartment rentals REST API backend server
 - Developed on Laravel framework.
 - All code scaffolded using [REST API Generator package](https://github.com/YanDatsyuk/Laravel-REST-API-generator) 
 
-##Project features
+## Project features
 This project allows to:
 
 - manage buildings (for admin)

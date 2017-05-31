@@ -1,0 +1,10 @@
+/.idea
+/.vagrant
+/resources
+/storage
+/vendor
+/node_modules
+.env
+Vagrantfile
+Homestead.json
+Homestead.yaml

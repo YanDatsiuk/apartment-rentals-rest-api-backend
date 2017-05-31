@@ -1,13 +1,15 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "YanDatsyuk/apartment-rentals-rest-api-backend",
+    "description": "Appartment rentals written in Laravel. Type: RESTful API backend.",
+    "keywords": ["laravel", "appartment", "rentals", "rest", "api", "backend"],
     "license": "MIT",
     "type": "project",
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.6.4",
         "laravel/framework": "5.4.*",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "tmphp/rest-api-generators": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -47,5 +49,11 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "optimize-autoloader": true
-    }
+    },
+    "authors": [
+        {
+            "name": "Yan Datsyuk",
+            "email": "yan.datsiuk@thinkmobiles.com"
+        }
+    ]
 }

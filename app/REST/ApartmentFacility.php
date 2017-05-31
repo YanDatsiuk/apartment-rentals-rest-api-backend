@@ -4,7 +4,7 @@ namespace App\REST;
 
 use Illuminate\Database\Eloquent\Model;
 
-class AuthGroupUser extends Model
+class ApartmentFacility extends Model
 {
     /**
      * Indicates if the model should be timestamped.
@@ -18,7 +18,7 @@ class AuthGroupUser extends Model
      *
      * @var string
      */
-    protected $table = 'auth_group_user';
+    protected $table = 'apartment_facilities';
 
     /**
       * The attributes that are mass assignable.
@@ -26,31 +26,31 @@ class AuthGroupUser extends Model
       * @var array
       */
     protected $fillable = [
-        'group_id', 
-		'user_id', 
+        'apartment_id', 
+		'facility_id', 
 		
     ];
 
     
 
 	/**
-     * group.
+     * apartment.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function group()
+    public function apartment()
     {
-        return $this->belongsTo('App\REST\AuthGroup');
+        return $this->belongsTo('App\REST\Apartment');
     }
 
 	/**
-     * user.
+     * facility.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function user()
+    public function facility()
     {
-        return $this->belongsTo('App\REST\User');
+        return $this->belongsTo('App\REST\Facility');
     }
 
     

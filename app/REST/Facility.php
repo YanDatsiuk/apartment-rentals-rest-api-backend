@@ -4,7 +4,7 @@ namespace App\REST;
 
 use Illuminate\Database\Eloquent\Model;
 
-class AuthAction extends Model
+class Facility extends Model
 {
     /**
      * Indicates if the model should be timestamped.
@@ -18,7 +18,7 @@ class AuthAction extends Model
      *
      * @var string
      */
-    protected $table = 'auth_actions';
+    protected $table = 'facilities';
 
     /**
       * The attributes that are mass assignable.
@@ -26,7 +26,7 @@ class AuthAction extends Model
       * @var array
       */
     protected $fillable = [
-        'name', 
+        'description', 
 		
     ];
 
@@ -35,28 +35,28 @@ class AuthAction extends Model
     
 
 	/**
-     * authActionGroups.
+     * apartmentFacilities.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function authActionGroups()
+    public function apartmentFacilities()
     {
-        return $this->hasMany('App\REST\AuthActionGroup', 'action_id');
+        return $this->hasMany('App\REST\ApartmentFacility', 'facility_id');
     }
 
     
 
 	/**
-     * AuthGroups.
+     * Apartments.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function authGroups()
+    public function apartments()
     {
         return $this->belongsToMany(
-            'App\REST\AuthGroup',
-            'auth_action_group',
-            'action_id',
-            'group_id');
+            'App\REST\Apartment',
+            'apartment_facilities',
+            'facility_id',
+            'apartment_id');
     }
 }

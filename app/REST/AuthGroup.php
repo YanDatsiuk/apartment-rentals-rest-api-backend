@@ -4,19 +4,6 @@ namespace App\REST;
 
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * App\REST\AuthGroup
- *
- * @property int $id
- * @property string|null $name
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\AuthActionGroup[] $authActionGroups
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\AuthAction[] $authActions
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\AuthGroupUser[] $authGroupUsers
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\User[] $users
- * @method static \Illuminate\Database\Query\Builder|\App\REST\AuthGroup whereId($value)
- * @method static \Illuminate\Database\Query\Builder|\App\REST\AuthGroup whereName($value)
- * @mixin \Eloquent
- */
 class AuthGroup extends Model
 {
     /**

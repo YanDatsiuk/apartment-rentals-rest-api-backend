@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use TMPHP\RestApiGenerators\AbstractEntities\TransformerAbstract;
 
 
-class UserTransformer extends TransformerAbstract
+class BookingStatusTransformer extends TransformerAbstract
 {
 
     /**
@@ -15,7 +15,7 @@ class UserTransformer extends TransformerAbstract
      * @var array
      */
     protected $availableIncludes = [
-        'authGroupUsers', 'bookings', 'buildings', 'authGroups', 'apartments', 'bookingStatuses', 
+        'bookings', 'apartments', 'users', 
     ];
 
     /**

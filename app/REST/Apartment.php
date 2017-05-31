@@ -4,7 +4,7 @@ namespace App\REST;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Apartment extends Model
 {
     /**
      * Indicates if the model should be timestamped.
@@ -18,7 +18,7 @@ class User extends Model
      *
      * @var string
      */
-    protected $table = 'users';
+    protected $table = 'apartments';
 
     /**
       * The attributes that are mass assignable.
@@ -26,27 +26,47 @@ class User extends Model
       * @var array
       */
     protected $fillable = [
-        'name', 
-		'email', 
-		'password', 
-		'remember_token', 
-		'created_at', 
-		'updated_at', 
+        'building_id', 
+		'type_id', 
+		'bathroom_quantity', 
+		'bedroom_quantity', 
+		'room_quantity', 
+		'description', 
 		
     ];
 
     
 
+	/**
+     * building.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function building()
+    {
+        return $this->belongsTo('App\REST\Building');
+    }
+
+	/**
+     * type.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function type()
+    {
+        return $this->belongsTo('App\REST\ApartmentType');
+    }
+
     
 
 	/**
-     * authGroupUsers.
+     * apartmentFacilities.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function authGroupUsers()
+    public function apartmentFacilities()
     {
-        return $this->hasMany('App\REST\AuthGroupUser', 'user_id');
+        return $this->hasMany('App\REST\ApartmentFacility', 'apartment_id');
     }
 
 	/**
@@ -56,47 +76,37 @@ class User extends Model
      */
     public function bookings()
     {
-        return $this->hasMany('App\REST\Booking', 'guest_id');
-    }
-
-	/**
-     * buildings.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function buildings()
-    {
-        return $this->hasMany('App\REST\Building', 'manager_id');
+        return $this->hasMany('App\REST\Booking', 'appartment_id');
     }
 
     
 
 	/**
-     * AuthGroups.
+     * Facilities.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function authGroups()
+    public function facilities()
     {
         return $this->belongsToMany(
-            'App\REST\AuthGroup',
-            'auth_group_user',
-            'user_id',
-            'group_id');
+            'App\REST\Facility',
+            'apartment_facilities',
+            'apartment_id',
+            'facility_id');
     }
 
 	/**
-     * Apartments.
+     * Users.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function apartments()
+    public function users()
     {
         return $this->belongsToMany(
-            'App\REST\Apartment',
+            'App\REST\User',
             'bookings',
-            'guest_id',
-            'appartment_id');
+            'appartment_id',
+            'guest_id');
     }
 
 	/**
@@ -109,7 +119,7 @@ class User extends Model
         return $this->belongsToMany(
             'App\REST\BookingStatus',
             'bookings',
-            'guest_id',
+            'appartment_id',
             'status_id');
     }
 }

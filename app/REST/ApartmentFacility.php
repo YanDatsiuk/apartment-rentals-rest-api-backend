@@ -21,19 +21,18 @@ class ApartmentFacility extends Model
     protected $table = 'apartment_facilities';
 
     /**
-      * The attributes that are mass assignable.
-      *
-      * @var array
-      */
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
-        'apartment_id', 
-		'facility_id', 
-		
+        'apartment_id',
+        'facility_id',
+
     ];
 
-    
 
-	/**
+    /**
      * apartment.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -43,7 +42,7 @@ class ApartmentFacility extends Model
         return $this->belongsTo('App\REST\Apartment');
     }
 
-	/**
+    /**
      * facility.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -53,7 +52,5 @@ class ApartmentFacility extends Model
         return $this->belongsTo('App\REST\Facility');
     }
 
-    
 
-    
 }

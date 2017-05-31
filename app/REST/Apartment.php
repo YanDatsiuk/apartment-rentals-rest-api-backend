@@ -21,23 +21,22 @@ class Apartment extends Model
     protected $table = 'apartments';
 
     /**
-      * The attributes that are mass assignable.
-      *
-      * @var array
-      */
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
-        'building_id', 
-		'type_id', 
-		'bathroom_quantity', 
-		'bedroom_quantity', 
-		'room_quantity', 
-		'description', 
-		
+        'building_id',
+        'type_id',
+        'bathroom_quantity',
+        'bedroom_quantity',
+        'room_quantity',
+        'description',
+
     ];
 
-    
 
-	/**
+    /**
      * building.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -47,7 +46,7 @@ class Apartment extends Model
         return $this->belongsTo('App\REST\Building');
     }
 
-	/**
+    /**
      * type.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -57,9 +56,8 @@ class Apartment extends Model
         return $this->belongsTo('App\REST\ApartmentType');
     }
 
-    
 
-	/**
+    /**
      * apartmentFacilities.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -69,7 +67,7 @@ class Apartment extends Model
         return $this->hasMany('App\REST\ApartmentFacility', 'apartment_id');
     }
 
-	/**
+    /**
      * bookings.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -79,9 +77,8 @@ class Apartment extends Model
         return $this->hasMany('App\REST\Booking', 'appartment_id');
     }
 
-    
 
-	/**
+    /**
      * Facilities.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
@@ -95,7 +92,7 @@ class Apartment extends Model
             'facility_id');
     }
 
-	/**
+    /**
      * Users.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
@@ -109,7 +106,7 @@ class Apartment extends Model
             'guest_id');
     }
 
-	/**
+    /**
      * BookingStatuses.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

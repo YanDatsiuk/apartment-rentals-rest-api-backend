@@ -13,31 +13,31 @@ class UserController extends ControllerAbstract
      *
      * @var array $rules
      */
-     protected $rules = [
-       'index'   => [
-            
-       ],
-       'store'   => [
-            'name' => 'string', 
-			'email' => 'string|email|unique:users,email', 
-			'password' => 'string', 
-			'remember_token' => 'string', 
-			
-       ],
-       'update'  => [
-            'name' => 'string', 
-			'email' => 'string|email|unique:users,email', 
-			'password' => 'string', 
-			'remember_token' => 'string', 
-			
-       ],
-       'show'    => [
-            
-       ],
-       'destroy' => [
-            
-       ],
-     ];
+    protected $rules = [
+        'index' => [
+
+        ],
+        'store' => [
+            'name' => 'string',
+            'email' => 'string|email|unique:users,email',
+            'password' => 'string',
+            'remember_token' => 'string',
+
+        ],
+        'update' => [
+            'name' => 'string',
+            'email' => 'string|email|unique:users,email',
+            'password' => 'string',
+            'remember_token' => 'string',
+
+        ],
+        'show' => [
+
+        ],
+        'destroy' => [
+
+        ],
+    ];
 
     /**
      * UserController constructor.

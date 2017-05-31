@@ -17,7 +17,7 @@ $api->group(
     ['version' => 'v1', 'prefix' => 'v1', 'middleware' => ['check.role.access']],
     function ($api) {
 
-        
+
         //apartments-facilities CRUD
         $api->group(
             ['prefix' => '/apartments-facilities'],

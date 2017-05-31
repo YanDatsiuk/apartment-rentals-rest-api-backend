@@ -13,35 +13,35 @@ class ApartmentController extends ControllerAbstract
      *
      * @var array $rules
      */
-     protected $rules = [
-       'index'   => [
-            
-       ],
-       'store'   => [
-            'building_id' => 'integer|between:0,4294967295|exists:buildings,id', 
-			'type_id' => 'integer|between:0,4294967295|exists:apartment_types,id', 
-			'bathroom_quantity' => 'integer|between:-2147483648,2147483647', 
-			'bedroom_quantity' => 'integer|between:-2147483648,2147483647', 
-			'room_quantity' => 'integer|between:-2147483648,2147483647', 
-			'description' => 'string', 
-			
-       ],
-       'update'  => [
-            'building_id' => 'integer|between:0,4294967295|exists:buildings,id', 
-			'type_id' => 'integer|between:0,4294967295|exists:apartment_types,id', 
-			'bathroom_quantity' => 'integer|between:-2147483648,2147483647', 
-			'bedroom_quantity' => 'integer|between:-2147483648,2147483647', 
-			'room_quantity' => 'integer|between:-2147483648,2147483647', 
-			'description' => 'string', 
-			
-       ],
-       'show'    => [
-            
-       ],
-       'destroy' => [
-            
-       ],
-     ];
+    protected $rules = [
+        'index' => [
+
+        ],
+        'store' => [
+            'building_id' => 'integer|between:0,4294967295|exists:buildings,id',
+            'type_id' => 'integer|between:0,4294967295|exists:apartment_types,id',
+            'bathroom_quantity' => 'integer|between:-2147483648,2147483647',
+            'bedroom_quantity' => 'integer|between:-2147483648,2147483647',
+            'room_quantity' => 'integer|between:-2147483648,2147483647',
+            'description' => 'string',
+
+        ],
+        'update' => [
+            'building_id' => 'integer|between:0,4294967295|exists:buildings,id',
+            'type_id' => 'integer|between:0,4294967295|exists:apartment_types,id',
+            'bathroom_quantity' => 'integer|between:-2147483648,2147483647',
+            'bedroom_quantity' => 'integer|between:-2147483648,2147483647',
+            'room_quantity' => 'integer|between:-2147483648,2147483647',
+            'description' => 'string',
+
+        ],
+        'show' => [
+
+        ],
+        'destroy' => [
+
+        ],
+    ];
 
     /**
      * ApartmentController constructor.

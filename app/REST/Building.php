@@ -21,22 +21,21 @@ class Building extends Model
     protected $table = 'buildings';
 
     /**
-      * The attributes that are mass assignable.
-      *
-      * @var array
-      */
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
-        'manager_id', 
-		'short_name', 
-		'full_name', 
-		'description', 
-		'address', 
-		
+        'manager_id',
+        'short_name',
+        'full_name',
+        'description',
+        'address',
+
     ];
 
-    
 
-	/**
+    /**
      * manager.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -46,9 +45,8 @@ class Building extends Model
         return $this->belongsTo('App\REST\User');
     }
 
-    
 
-	/**
+    /**
      * apartments.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -58,9 +56,8 @@ class Building extends Model
         return $this->hasMany('App\REST\Apartment', 'building_id');
     }
 
-    
 
-	/**
+    /**
      * ApartmentTypes.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

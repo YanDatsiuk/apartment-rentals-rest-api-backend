@@ -21,20 +21,17 @@ class BookingStatus extends Model
     protected $table = 'booking_status';
 
     /**
-      * The attributes that are mass assignable.
-      *
-      * @var array
-      */
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
-        'name', 
-		
+        'name',
+
     ];
 
-    
 
-    
-
-	/**
+    /**
      * bookings.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -44,9 +41,8 @@ class BookingStatus extends Model
         return $this->hasMany('App\REST\Booking', 'status_id');
     }
 
-    
 
-	/**
+    /**
      * Apartments.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
@@ -60,7 +56,7 @@ class BookingStatus extends Model
             'appartment_id');
     }
 
-	/**
+    /**
      * Users.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

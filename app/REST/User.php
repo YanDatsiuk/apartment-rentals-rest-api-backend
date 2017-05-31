@@ -21,25 +21,22 @@ class User extends Model
     protected $table = 'users';
 
     /**
-      * The attributes that are mass assignable.
-      *
-      * @var array
-      */
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
-        'name', 
-		'email', 
-		'password', 
-		'remember_token', 
-		'created_at', 
-		'updated_at', 
-		
+        'name',
+        'email',
+        'password',
+        'remember_token',
+        'created_at',
+        'updated_at',
+
     ];
 
-    
 
-    
-
-	/**
+    /**
      * authGroupUsers.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -49,7 +46,7 @@ class User extends Model
         return $this->hasMany('App\REST\AuthGroupUser', 'user_id');
     }
 
-	/**
+    /**
      * bookings.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -59,7 +56,7 @@ class User extends Model
         return $this->hasMany('App\REST\Booking', 'guest_id');
     }
 
-	/**
+    /**
      * buildings.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -69,9 +66,8 @@ class User extends Model
         return $this->hasMany('App\REST\Building', 'manager_id');
     }
 
-    
 
-	/**
+    /**
      * AuthGroups.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
@@ -85,7 +81,7 @@ class User extends Model
             'group_id');
     }
 
-	/**
+    /**
      * Apartments.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
@@ -99,7 +95,7 @@ class User extends Model
             'appartment_id');
     }
 
-	/**
+    /**
      * BookingStatuses.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

@@ -13,27 +13,27 @@ class ApartmentFacilityController extends ControllerAbstract
      *
      * @var array $rules
      */
-     protected $rules = [
-       'index'   => [
-            
-       ],
-       'store'   => [
-            'apartment_id' => 'integer|between:0,4294967295|exists:apartments,id', 
-			'facility_id' => 'integer|between:0,4294967295|exists:facilities,id', 
-			
-       ],
-       'update'  => [
-            'apartment_id' => 'integer|between:0,4294967295|exists:apartments,id', 
-			'facility_id' => 'integer|between:0,4294967295|exists:facilities,id', 
-			
-       ],
-       'show'    => [
-            
-       ],
-       'destroy' => [
-            
-       ],
-     ];
+    protected $rules = [
+        'index' => [
+
+        ],
+        'store' => [
+            'apartment_id' => 'integer|between:0,4294967295|exists:apartments,id',
+            'facility_id' => 'integer|between:0,4294967295|exists:facilities,id',
+
+        ],
+        'update' => [
+            'apartment_id' => 'integer|between:0,4294967295|exists:apartments,id',
+            'facility_id' => 'integer|between:0,4294967295|exists:facilities,id',
+
+        ],
+        'show' => [
+
+        ],
+        'destroy' => [
+
+        ],
+    ];
 
     /**
      * ApartmentFacilityController constructor.

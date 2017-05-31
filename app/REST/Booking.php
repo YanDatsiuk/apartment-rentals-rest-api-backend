@@ -21,23 +21,22 @@ class Booking extends Model
     protected $table = 'bookings';
 
     /**
-      * The attributes that are mass assignable.
-      *
-      * @var array
-      */
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
-        'appartment_id', 
-		'guest_id', 
-		'status_id', 
-		'start_date', 
-		'end_date', 
-		'details', 
-		
+        'appartment_id',
+        'guest_id',
+        'status_id',
+        'start_date',
+        'end_date',
+        'details',
+
     ];
 
-    
 
-	/**
+    /**
      * appartment.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -47,7 +46,7 @@ class Booking extends Model
         return $this->belongsTo('App\REST\Apartment');
     }
 
-	/**
+    /**
      * guest.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -57,7 +56,7 @@ class Booking extends Model
         return $this->belongsTo('App\REST\User');
     }
 
-	/**
+    /**
      * status.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -67,7 +66,5 @@ class Booking extends Model
         return $this->belongsTo('App\REST\BookingStatus');
     }
 
-    
 
-    
 }

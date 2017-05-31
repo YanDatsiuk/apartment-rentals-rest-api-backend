@@ -13,25 +13,25 @@ class AuthActionController extends ControllerAbstract
      *
      * @var array $rules
      */
-     protected $rules = [
-       'index'   => [
-            
-       ],
-       'store'   => [
-            'name' => 'string', 
-			
-       ],
-       'update'  => [
-            'name' => 'string', 
-			
-       ],
-       'show'    => [
-            
-       ],
-       'destroy' => [
-            
-       ],
-     ];
+    protected $rules = [
+        'index' => [
+
+        ],
+        'store' => [
+            'name' => 'string',
+
+        ],
+        'update' => [
+            'name' => 'string',
+
+        ],
+        'show' => [
+
+        ],
+        'destroy' => [
+
+        ],
+    ];
 
     /**
      * AuthActionController constructor.

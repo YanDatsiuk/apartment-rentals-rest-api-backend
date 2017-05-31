@@ -21,20 +21,17 @@ class AuthAction extends Model
     protected $table = 'auth_actions';
 
     /**
-      * The attributes that are mass assignable.
-      *
-      * @var array
-      */
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
-        'name', 
-		
+        'name',
+
     ];
 
-    
 
-    
-
-	/**
+    /**
      * authActionGroups.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -44,9 +41,8 @@ class AuthAction extends Model
         return $this->hasMany('App\REST\AuthActionGroup', 'action_id');
     }
 
-    
 
-	/**
+    /**
      * AuthGroups.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

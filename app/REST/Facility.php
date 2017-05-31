@@ -21,20 +21,17 @@ class Facility extends Model
     protected $table = 'facilities';
 
     /**
-      * The attributes that are mass assignable.
-      *
-      * @var array
-      */
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
-        'description', 
-		
+        'description',
+
     ];
 
-    
 
-    
-
-	/**
+    /**
      * apartmentFacilities.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -44,9 +41,8 @@ class Facility extends Model
         return $this->hasMany('App\REST\ApartmentFacility', 'facility_id');
     }
 
-    
 
-	/**
+    /**
      * Apartments.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

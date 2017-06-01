@@ -10,13 +10,12 @@ class AuthGroupUserTransformer extends TransformerAbstract
 {
 
     /**
-     *
+     * 
      *
      * @var array
      */
     protected $availableIncludes = [
-        'group',
-        'user',
+        'group', 'user', 
     ];
 
     /**

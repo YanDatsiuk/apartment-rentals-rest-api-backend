@@ -4,6 +4,32 @@ namespace App\REST;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\REST\Apartment
+ *
+ * @property int $id
+ * @property int|null $building_id
+ * @property int|null $type_id
+ * @property int|null $bathroom_quantity
+ * @property int|null $bedroom_quantity
+ * @property int|null $room_quantity
+ * @property string|null $description
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\ApartmentFacility[] $apartmentFacilities
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\Booking[] $bookings
+ * @property-read \App\REST\Building|null $building
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\Facility[] $facilities
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\Status[] $statuses
+ * @property-read \App\REST\ApartmentType|null $type
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\User[] $users
+ * @method static \Illuminate\Database\Query\Builder|\App\REST\Apartment whereBathroomQuantity($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\REST\Apartment whereBedroomQuantity($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\REST\Apartment whereBuildingId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\REST\Apartment whereDescription($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\REST\Apartment whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\REST\Apartment whereRoomQuantity($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\REST\Apartment whereTypeId($value)
+ * @mixin \Eloquent
+ */
 class Apartment extends Model
 {
     /**
@@ -21,22 +47,23 @@ class Apartment extends Model
     protected $table = 'apartments';
 
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+      * The attributes that are mass assignable.
+      *
+      * @var array
+      */
     protected $fillable = [
-        'building_id',
-        'type_id',
-        'bathroom_quantity',
-        'bedroom_quantity',
-        'room_quantity',
-        'description',
-
+        'building_id', 
+		'type_id', 
+		'bathroom_quantity', 
+		'bedroom_quantity', 
+		'room_quantity', 
+		'description', 
+		
     ];
 
+    
 
-    /**
+	/**
      * building.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -46,7 +73,7 @@ class Apartment extends Model
         return $this->belongsTo('App\REST\Building');
     }
 
-    /**
+	/**
      * type.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -56,8 +83,9 @@ class Apartment extends Model
         return $this->belongsTo('App\REST\ApartmentType');
     }
 
+    
 
-    /**
+	/**
      * apartmentFacilities.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -67,7 +95,7 @@ class Apartment extends Model
         return $this->hasMany('App\REST\ApartmentFacility', 'apartment_id');
     }
 
-    /**
+	/**
      * bookings.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -77,8 +105,9 @@ class Apartment extends Model
         return $this->hasMany('App\REST\Booking', 'appartment_id');
     }
 
+    
 
-    /**
+	/**
      * Facilities.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
@@ -92,7 +121,7 @@ class Apartment extends Model
             'facility_id');
     }
 
-    /**
+	/**
      * Users.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
@@ -106,15 +135,15 @@ class Apartment extends Model
             'guest_id');
     }
 
-    /**
-     * BookingStatuses.
+	/**
+     * Statuses.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function bookingStatuses()
+    public function statuses()
     {
         return $this->belongsToMany(
-            'App\REST\BookingStatus',
+            'App\REST\Status',
             'bookings',
             'appartment_id',
             'status_id');

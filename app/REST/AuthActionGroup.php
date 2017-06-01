@@ -4,6 +4,19 @@ namespace App\REST;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\REST\AuthActionGroup
+ *
+ * @property int $id
+ * @property int|null $action_id
+ * @property int|null $group_id
+ * @property-read \App\REST\AuthAction|null $action
+ * @property-read \App\REST\AuthGroup|null $group
+ * @method static \Illuminate\Database\Query\Builder|\App\REST\AuthActionGroup whereActionId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\REST\AuthActionGroup whereGroupId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\REST\AuthActionGroup whereId($value)
+ * @mixin \Eloquent
+ */
 class AuthActionGroup extends Model
 {
     /**
@@ -21,18 +34,19 @@ class AuthActionGroup extends Model
     protected $table = 'auth_action_group';
 
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+      * The attributes that are mass assignable.
+      *
+      * @var array
+      */
     protected $fillable = [
-        'action_id',
-        'group_id',
-
+        'action_id', 
+		'group_id', 
+		
     ];
 
+    
 
-    /**
+	/**
      * action.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -42,7 +56,7 @@ class AuthActionGroup extends Model
         return $this->belongsTo('App\REST\AuthAction');
     }
 
-    /**
+	/**
      * group.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -52,5 +66,7 @@ class AuthActionGroup extends Model
         return $this->belongsTo('App\REST\AuthGroup');
     }
 
+    
 
+    
 }

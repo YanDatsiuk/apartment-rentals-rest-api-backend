@@ -13,25 +13,27 @@ class BookingStatusController extends ControllerAbstract
      *
      * @var array $rules
      */
-    protected $rules = [
-        'index' => [
-
-        ],
-        'store' => [
-            'name' => 'string',
-
-        ],
-        'update' => [
-            'name' => 'string',
-
-        ],
-        'show' => [
-
-        ],
-        'destroy' => [
-
-        ],
-    ];
+     protected $rules = [
+       'index'   => [
+            
+       ],
+       'store'   => [
+            'booking_id' => 'integer|between:0,4294967295|exists:bookings,id|unique:booking_statuses,booking_id', 
+			'status_id' => 'integer|between:0,4294967295|exists:statuses,id', 
+			
+       ],
+       'update'  => [
+            'booking_id' => 'integer|between:0,4294967295|exists:bookings,id|unique:booking_statuses,booking_id', 
+			'status_id' => 'integer|between:0,4294967295|exists:statuses,id', 
+			
+       ],
+       'show'    => [
+            
+       ],
+       'destroy' => [
+            
+       ],
+     ];
 
     /**
      * BookingStatusController constructor.

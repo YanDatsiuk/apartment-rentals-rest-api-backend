@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateBookingStatusTable extends Migration {
+class CreateStatusesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateBookingStatusTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('booking_status', function(Blueprint $table)
+		Schema::create('statuses', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('name')->nullable();
@@ -27,7 +27,7 @@ class CreateBookingStatusTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('booking_status');
+		Schema::drop('statuses');
 	}
 
 }

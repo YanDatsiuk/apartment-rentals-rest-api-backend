@@ -13,27 +13,27 @@ class AuthGroupUserController extends ControllerAbstract
      *
      * @var array $rules
      */
-    protected $rules = [
-        'index' => [
-
-        ],
-        'store' => [
-            'group_id' => 'integer|between:0,4294967295|exists:auth_groups,id',
-            'user_id' => 'integer|between:0,4294967295|exists:users,id',
-
-        ],
-        'update' => [
-            'group_id' => 'integer|between:0,4294967295|exists:auth_groups,id',
-            'user_id' => 'integer|between:0,4294967295|exists:users,id',
-
-        ],
-        'show' => [
-
-        ],
-        'destroy' => [
-
-        ],
-    ];
+     protected $rules = [
+       'index'   => [
+            
+       ],
+       'store'   => [
+            'group_id' => 'integer|between:0,4294967295|exists:auth_groups,id', 
+			'user_id' => 'integer|between:0,4294967295|exists:users,id', 
+			
+       ],
+       'update'  => [
+            'group_id' => 'integer|between:0,4294967295|exists:auth_groups,id', 
+			'user_id' => 'integer|between:0,4294967295|exists:users,id', 
+			
+       ],
+       'show'    => [
+            
+       ],
+       'destroy' => [
+            
+       ],
+     ];
 
     /**
      * AuthGroupUserController constructor.

@@ -2,11 +2,11 @@
 
 namespace App\REST\Http\Controllers\Api\v1;
 
-use App\REST\AuthGroup;
+use App\REST\Status;
 use TMPHP\RestApiGenerators\AbstractEntities\ControllerAbstract;
-use App\REST\Transformers\AuthGroupTransformer;
+use App\REST\Transformers\StatusTransformer;
 
-class AuthGroupController extends ControllerAbstract
+class StatusController extends ControllerAbstract
 {
     /**
      * Validation rules for request parameters.
@@ -34,11 +34,11 @@ class AuthGroupController extends ControllerAbstract
      ];
 
     /**
-     * AuthGroupController constructor.
+     * StatusController constructor.
      */
     public function __construct()
     {
-        parent::__construct(new AuthGroup(), AuthGroupTransformer::class);
+        parent::__construct(new Status(), StatusTransformer::class);
     }
 
 }

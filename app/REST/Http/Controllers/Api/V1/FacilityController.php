@@ -13,25 +13,25 @@ class FacilityController extends ControllerAbstract
      *
      * @var array $rules
      */
-    protected $rules = [
-        'index' => [
-
-        ],
-        'store' => [
-            'description' => 'string',
-
-        ],
-        'update' => [
-            'description' => 'string',
-
-        ],
-        'show' => [
-
-        ],
-        'destroy' => [
-
-        ],
-    ];
+     protected $rules = [
+       'index'   => [
+            
+       ],
+       'store'   => [
+            'description' => 'string', 
+			
+       ],
+       'update'  => [
+            'description' => 'string', 
+			
+       ],
+       'show'    => [
+            
+       ],
+       'destroy' => [
+            
+       ],
+     ];
 
     /**
      * FacilityController constructor.

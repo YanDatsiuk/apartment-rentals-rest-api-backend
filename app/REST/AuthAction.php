@@ -4,6 +4,17 @@ namespace App\REST;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\REST\AuthAction
+ *
+ * @property int $id
+ * @property string|null $name
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\AuthActionGroup[] $authActionGroups
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\AuthGroup[] $authGroups
+ * @method static \Illuminate\Database\Query\Builder|\App\REST\AuthAction whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\REST\AuthAction whereName($value)
+ * @mixin \Eloquent
+ */
 class AuthAction extends Model
 {
     /**
@@ -21,17 +32,20 @@ class AuthAction extends Model
     protected $table = 'auth_actions';
 
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+      * The attributes that are mass assignable.
+      *
+      * @var array
+      */
     protected $fillable = [
-        'name',
-
+        'name', 
+		
     ];
 
+    
 
-    /**
+    
+
+	/**
      * authActionGroups.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -41,8 +55,9 @@ class AuthAction extends Model
         return $this->hasMany('App\REST\AuthActionGroup', 'action_id');
     }
 
+    
 
-    /**
+	/**
      * AuthGroups.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

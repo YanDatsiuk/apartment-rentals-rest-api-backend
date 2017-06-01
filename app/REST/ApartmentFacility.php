@@ -4,6 +4,19 @@ namespace App\REST;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\REST\ApartmentFacility
+ *
+ * @property int $id
+ * @property int|null $apartment_id
+ * @property int|null $facility_id
+ * @property-read \App\REST\Apartment|null $apartment
+ * @property-read \App\REST\Facility|null $facility
+ * @method static \Illuminate\Database\Query\Builder|\App\REST\ApartmentFacility whereApartmentId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\REST\ApartmentFacility whereFacilityId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\REST\ApartmentFacility whereId($value)
+ * @mixin \Eloquent
+ */
 class ApartmentFacility extends Model
 {
     /**
@@ -21,18 +34,19 @@ class ApartmentFacility extends Model
     protected $table = 'apartment_facilities';
 
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+      * The attributes that are mass assignable.
+      *
+      * @var array
+      */
     protected $fillable = [
-        'apartment_id',
-        'facility_id',
-
+        'apartment_id', 
+		'facility_id', 
+		
     ];
 
+    
 
-    /**
+	/**
      * apartment.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -42,7 +56,7 @@ class ApartmentFacility extends Model
         return $this->belongsTo('App\REST\Apartment');
     }
 
-    /**
+	/**
      * facility.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -52,5 +66,7 @@ class ApartmentFacility extends Model
         return $this->belongsTo('App\REST\Facility');
     }
 
+    
 
+    
 }

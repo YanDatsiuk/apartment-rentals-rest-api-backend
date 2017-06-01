@@ -13,31 +13,31 @@ class BookingController extends ControllerAbstract
      *
      * @var array $rules
      */
-    protected $rules = [
-        'index' => [
-
-        ],
-        'store' => [
-            'appartment_id' => 'integer|between:0,4294967295|exists:apartments,id',
-            'guest_id' => 'integer|between:0,4294967295|exists:users,id',
-            'status_id' => 'integer|between:0,4294967295|exists:booking_status,id',
-            'details' => 'string',
-
-        ],
-        'update' => [
-            'appartment_id' => 'integer|between:0,4294967295|exists:apartments,id',
-            'guest_id' => 'integer|between:0,4294967295|exists:users,id',
-            'status_id' => 'integer|between:0,4294967295|exists:booking_status,id',
-            'details' => 'string',
-
-        ],
-        'show' => [
-
-        ],
-        'destroy' => [
-
-        ],
-    ];
+     protected $rules = [
+       'index'   => [
+            
+       ],
+       'store'   => [
+            'appartment_id' => 'integer|between:0,4294967295|exists:apartments,id', 
+			'guest_id' => 'integer|between:0,4294967295|exists:users,id', 
+			'status_id' => 'integer|between:0,4294967295|exists:statuses,id', 
+			'details' => 'string', 
+			
+       ],
+       'update'  => [
+            'appartment_id' => 'integer|between:0,4294967295|exists:apartments,id', 
+			'guest_id' => 'integer|between:0,4294967295|exists:users,id', 
+			'status_id' => 'integer|between:0,4294967295|exists:statuses,id', 
+			'details' => 'string', 
+			
+       ],
+       'show'    => [
+            
+       ],
+       'destroy' => [
+            
+       ],
+     ];
 
     /**
      * BookingController constructor.

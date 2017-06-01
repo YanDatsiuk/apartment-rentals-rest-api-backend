@@ -16,7 +16,7 @@ class AddForeignKeysToBookingsTable extends Migration {
 		{
 			$table->foreign('appartment_id', 'fk_bookings_1')->references('id')->on('apartments')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 			$table->foreign('guest_id', 'fk_bookings_2')->references('id')->on('users')->onUpdate('NO ACTION')->onDelete('NO ACTION');
-			$table->foreign('status_id', 'fk_bookings_3')->references('id')->on('booking_status')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+			$table->foreign('status_id', 'fk_bookings_3')->references('id')->on('statuses')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 		});
 	}
 

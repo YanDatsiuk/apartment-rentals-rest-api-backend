@@ -10,13 +10,12 @@ class AuthActionGroupTransformer extends TransformerAbstract
 {
 
     /**
-     *
+     * 
      *
      * @var array
      */
     protected $availableIncludes = [
-        'action',
-        'group',
+        'action', 'group', 
     ];
 
     /**

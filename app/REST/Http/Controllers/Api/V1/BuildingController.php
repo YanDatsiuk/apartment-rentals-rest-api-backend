@@ -13,33 +13,33 @@ class BuildingController extends ControllerAbstract
      *
      * @var array $rules
      */
-    protected $rules = [
-        'index' => [
-
-        ],
-        'store' => [
-            'manager_id' => 'integer|between:0,4294967295|exists:users,id',
-            'short_name' => 'string',
-            'full_name' => 'string',
-            'description' => 'string',
-            'address' => 'string',
-
-        ],
-        'update' => [
-            'manager_id' => 'integer|between:0,4294967295|exists:users,id',
-            'short_name' => 'string',
-            'full_name' => 'string',
-            'description' => 'string',
-            'address' => 'string',
-
-        ],
-        'show' => [
-
-        ],
-        'destroy' => [
-
-        ],
-    ];
+     protected $rules = [
+       'index'   => [
+            
+       ],
+       'store'   => [
+            'manager_id' => 'integer|between:0,4294967295|exists:users,id', 
+			'short_name' => 'string', 
+			'full_name' => 'string', 
+			'description' => 'string', 
+			'address' => 'string', 
+			
+       ],
+       'update'  => [
+            'manager_id' => 'integer|between:0,4294967295|exists:users,id', 
+			'short_name' => 'string', 
+			'full_name' => 'string', 
+			'description' => 'string', 
+			'address' => 'string', 
+			
+       ],
+       'show'    => [
+            
+       ],
+       'destroy' => [
+            
+       ],
+     ];
 
     /**
      * BuildingController constructor.

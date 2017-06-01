@@ -10,13 +10,12 @@ class ApartmentTypeTransformer extends TransformerAbstract
 {
 
     /**
-     *
+     * 
      *
      * @var array
      */
     protected $availableIncludes = [
-        'apartments',
-        'buildings',
+        'apartments', 'buildings', 
     ];
 
     /**

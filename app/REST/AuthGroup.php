@@ -4,6 +4,19 @@ namespace App\REST;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\REST\AuthGroup
+ *
+ * @property int $id
+ * @property string|null $name
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\AuthActionGroup[] $authActionGroups
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\AuthAction[] $authActions
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\AuthGroupUser[] $authGroupUsers
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\User[] $users
+ * @method static \Illuminate\Database\Query\Builder|\App\REST\AuthGroup whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\REST\AuthGroup whereName($value)
+ * @mixin \Eloquent
+ */
 class AuthGroup extends Model
 {
     /**
@@ -21,17 +34,20 @@ class AuthGroup extends Model
     protected $table = 'auth_groups';
 
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+      * The attributes that are mass assignable.
+      *
+      * @var array
+      */
     protected $fillable = [
-        'name',
-
+        'name', 
+		
     ];
 
+    
 
-    /**
+    
+
+	/**
      * authActionGroups.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -41,7 +57,7 @@ class AuthGroup extends Model
         return $this->hasMany('App\REST\AuthActionGroup', 'group_id');
     }
 
-    /**
+	/**
      * authGroupUsers.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -51,8 +67,9 @@ class AuthGroup extends Model
         return $this->hasMany('App\REST\AuthGroupUser', 'group_id');
     }
 
+    
 
-    /**
+	/**
      * AuthActions.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
@@ -66,7 +83,7 @@ class AuthGroup extends Model
             'action_id');
     }
 
-    /**
+	/**
      * Users.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

@@ -4,6 +4,19 @@ namespace App\REST;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\REST\BookingStatus
+ *
+ * @property int $id
+ * @property int|null $booking_id
+ * @property int|null $status_id
+ * @property-read \App\REST\Booking|null $booking
+ * @property-read \App\REST\Status|null $status
+ * @method static \Illuminate\Database\Query\Builder|\App\REST\BookingStatus whereBookingId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\REST\BookingStatus whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\REST\BookingStatus whereStatusId($value)
+ * @mixin \Eloquent
+ */
 class BookingStatus extends Model
 {
     /**
@@ -18,55 +31,42 @@ class BookingStatus extends Model
      *
      * @var string
      */
-    protected $table = 'booking_status';
+    protected $table = 'booking_statuses';
 
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+      * The attributes that are mass assignable.
+      *
+      * @var array
+      */
     protected $fillable = [
-        'name',
-
+        'booking_id', 
+		'status_id', 
+		
     ];
 
+    
 
-    /**
-     * bookings.
+	/**
+     * booking.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function bookings()
+    public function booking()
     {
-        return $this->hasMany('App\REST\Booking', 'status_id');
+        return $this->belongsTo('App\REST\Booking');
     }
 
-
-    /**
-     * Apartments.
+	/**
+     * status.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function apartments()
+    public function status()
     {
-        return $this->belongsToMany(
-            'App\REST\Apartment',
-            'bookings',
-            'status_id',
-            'appartment_id');
+        return $this->belongsTo('App\REST\Status');
     }
 
-    /**
-     * Users.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
-    public function users()
-    {
-        return $this->belongsToMany(
-            'App\REST\User',
-            'bookings',
-            'status_id',
-            'guest_id');
-    }
+    
+
+    
 }

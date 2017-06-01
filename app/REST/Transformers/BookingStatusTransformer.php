@@ -10,14 +10,12 @@ class BookingStatusTransformer extends TransformerAbstract
 {
 
     /**
-     *
+     * 
      *
      * @var array
      */
     protected $availableIncludes = [
-        'bookings',
-        'apartments',
-        'users',
+        'booking', 'status', 
     ];
 
     /**

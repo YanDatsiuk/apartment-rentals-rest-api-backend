@@ -17,7 +17,7 @@ $api->group(
     ['version' => 'v1', 'prefix' => 'v1', 'middleware' => ['check.role.access']],
     function ($api) {
 
-
+        
         //apartments-facilities CRUD
         $api->group(
             ['prefix' => '/apartments-facilities'],
@@ -2974,6 +2974,275 @@ $api->group(
                  */
                 $api->delete('/delete/{id}', 'App\REST\Http\Controllers\Api\v1\FacilityController@destroy')
                     ->name('facilities.delete');
+            }
+        );
+
+        //statuses CRUD
+        $api->group(
+            ['prefix' => '/statuses'],
+            function ($api) {
+
+                /**
+                 * @SWG\Get(
+                 *     path="/statuses",
+                 *     tags={"statuses"},
+                 *     description="Get list of statuses",
+                 *     produces= {"application/json"},
+                 *
+                 *      @SWG\Parameter(
+                 *         name="Authorization",
+                 *         in="header",
+                 *         description="JWTAuthToken example - Bearer {token}",
+                 *         required=true,
+                 *         type="string"
+                 *     ),
+                 *      @SWG\Parameter(
+                 *         name="include[]",
+                 *         in="query",
+                 *         description="List of model relations with limit and offset parameter. Example: {relationName}:limit({limit}|{offset})",
+                 *         default="",
+                 *         required=false,
+                 *         type="array",
+                 *         @SWG\Items(
+                 *             type="string"
+                 *         ),
+                 *         collectionFormat="multi"
+                 *     ),
+                 *     @SWG\Parameter(
+                 *         name="page",
+                 *         in="query",
+                 *         description="Page number",
+                 *         required=false,
+                 *         default=1,
+                 *         type="integer"
+                 *     ),
+                 *     @SWG\Parameter(
+                 *         name="limit",
+                 *         in="query",
+                 *         description="Items limit per page",
+                 *         required=false,
+                 *         default=10,
+                 *         type="integer"
+                 *     ),
+                 *     @SWG\Response(
+                 *         response="200",
+                 *         description="Requested resource collection"
+                 *     ),
+                 *
+                 *     @SWG\Response(
+                 *         response="403",
+                 *         description="Access forbidden"
+                 *     ),
+                 *     @SWG\Response(
+                 *         response="default",
+                 *         description="Unexpected error",
+                 *         @SWG\Schema(
+                 *             ref="#/definitions/error"
+                 *         )
+                 *     )
+                 * )
+                 */
+                $api->get('/', 'App\REST\Http\Controllers\Api\v1\StatusController@index')
+                    ->name('statuses');
+
+                /**
+                 * @SWG\Get(
+                 *     path="/statuses/show/{id}",
+                 *     tags={"statuses"},
+                 *     description="Get specific status by Id",
+                 *     produces= {"application/json"},
+                 *
+                 *      @SWG\Parameter(
+                 *         name="Authorization",
+                 *         in="header",
+                 *         description="JWTAuthToken example - Bearer {token}",
+                 *         required=true,
+                 *         type="string"
+                 *     ),
+                 *
+                 *     @SWG\Parameter(
+                 *         name="id",
+                 *         in="path",
+                 *         required=true,
+                 *         type="integer"
+                 *     ),
+                 *
+                 *     @SWG\Response(
+                 *         response="200",
+                 *         description="status with specified id"
+                 *     ),
+                 *
+                 *     @SWG\Response(
+                 *         response="403",
+                 *         description="Access forbidden"
+                 *     ),
+                 *     @SWG\Response(
+                 *         response="422",
+                 *         description="Unprocessable entity"
+                 *     ),
+                 *     @SWG\Response(
+                 *         response="default",
+                 *         description="Unexpected error",
+                 *         @SWG\Schema(
+                 *             ref="#/definitions/error"
+                 *         )
+                 *     )
+                 * )
+                 */
+                $api->get('/show/{id}', 'App\REST\Http\Controllers\Api\v1\StatusController@show')
+                    ->name('statuses.show.id');
+
+                /**
+                 * @SWG\Post(
+                 *     path="/statuses/create",
+                 *     tags={"statuses"},
+                 *     description="Create status",
+                 *     produces= {"application/json"},
+                 *
+                 *     @SWG\Parameter(
+                 *         name="Authorization",
+                 *         in="header",
+                 *         description="JWTAuthToken example - Bearer {token}",
+                 *         required=true,
+                 *         type="string"
+                 *     ),
+                 *     @SWG\Parameter(
+                 *         name="",
+                 *         in="body",
+                 *         description="",
+                 *         required=true,
+                 *         @SWG\Schema(
+                 *             ref="#/definitions/status",
+                 *         )
+                 *     ),
+                 *
+                 *     @SWG\Response(
+                 *         response="200",
+                 *         description="Created entity"
+                 *     ),
+                 *
+                 *     @SWG\Response(
+                 *         response="403",
+                 *         description="Access forbidden"
+                 *     ),
+                 *     @SWG\Response(
+                 *         response="422",
+                 *         description="Unprocessable entity"
+                 *     ),
+                 *     @SWG\Response(
+                 *         response="default",
+                 *         description="Unexpected error",
+                 *         @SWG\Schema(
+                 *             ref="#/definitions/error"
+                 *         )
+                 *     )
+                 * )
+                 */
+                $api->post('/create/', 'App\REST\Http\Controllers\Api\v1\StatusController@store')
+                    ->name('statuses.create');
+
+                /**
+                 * @SWG\Patch(
+                 *     path="/statuses/update/{id}",
+                 *     tags={"statuses"},
+                 *     description="Update specific status by Id",
+                 *     produces= {"application/json"},
+                 *
+                 *     @SWG\Parameter(
+                 *         name="Authorization",
+                 *         in="header",
+                 *         description="JWTAuthToken example - Bearer {token}",
+                 *         required=true,
+                 *         type="string"
+                 *     ),
+                 *     @SWG\Parameter(
+                 *         name="id",
+                 *         in="path",
+                 *         description="",
+                 *         required=true,
+                 *         type="integer"
+                 *     ),
+                 *     @SWG\Parameter(
+                 *         name="",
+                 *         in="body",
+                 *         description="",
+                 *         required=true,
+                 *         @SWG\Schema(
+                 *             ref="#/definitions/status"
+                 *         )
+                 *     ),
+                 *
+                 *     @SWG\Response(
+                 *         response="200",
+                 *         description="Updated entity"
+                 *     ),
+                 *
+                 *     @SWG\Response(
+                 *         response="403",
+                 *         description="Access forbidden"
+                 *     ),
+                 *     @SWG\Response(
+                 *         response="422",
+                 *         description="Unprocessable entity"
+                 *     ),
+                 *     @SWG\Response(
+                 *         response="default",
+                 *         description="Unexpected error",
+                 *         @SWG\Schema(
+                 *             ref="#/definitions/error"
+                 *         )
+                 *     )
+                 * )
+                 */
+                $api->patch('/update/{id}', 'App\REST\Http\Controllers\Api\v1\StatusController@update')
+                    ->name('statuses.update');
+
+                /**
+                 * @SWG\Delete(
+                 *     path="/statuses/delete/{id}",
+                 *     tags={"statuses"},
+                 *     description="Delete specific status by Id",
+                 *     produces= {"application/json"},
+                 *
+                 *     @SWG\Parameter(
+                 *         name="Authorization",
+                 *         in="header",
+                 *         description="JWTAuthToken example - Bearer {token}",
+                 *         required=true,
+                 *         type="string"
+                 *     ),
+                 *     @SWG\Parameter(
+                 *         name="id",
+                 *         in="path",
+                 *         description="",
+                 *         required=true,
+                 *         type="integer"
+                 *     ),
+                 *
+                 *     @SWG\Response(
+                 *         response="204",
+                 *         description="Deleted entity"
+                 *     ),
+                 *
+                 *     @SWG\Response(
+                 *         response="403",
+                 *         description="Access forbidden"
+                 *     ),
+                 *     @SWG\Response(
+                 *         response="422",
+                 *         description="Unprocessable entity"
+                 *     ),
+                 *     @SWG\Response(
+                 *         response="default",
+                 *         description="Unexpected error",
+                 *         @SWG\Schema(
+                 *             ref="#/definitions/error"
+                 *         )
+                 *     )
+                 * )
+                 */
+                $api->delete('/delete/{id}', 'App\REST\Http\Controllers\Api\v1\StatusController@destroy')
+                    ->name('statuses.delete');
             }
         );
 

@@ -4,6 +4,17 @@ namespace App\REST;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\REST\Facility
+ *
+ * @property int $id
+ * @property string|null $description
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\ApartmentFacility[] $apartmentFacilities
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\Apartment[] $apartments
+ * @method static \Illuminate\Database\Query\Builder|\App\REST\Facility whereDescription($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\REST\Facility whereId($value)
+ * @mixin \Eloquent
+ */
 class Facility extends Model
 {
     /**
@@ -21,17 +32,20 @@ class Facility extends Model
     protected $table = 'facilities';
 
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+      * The attributes that are mass assignable.
+      *
+      * @var array
+      */
     protected $fillable = [
-        'description',
-
+        'description', 
+		
     ];
 
+    
 
-    /**
+    
+
+	/**
      * apartmentFacilities.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -41,8 +55,9 @@ class Facility extends Model
         return $this->hasMany('App\REST\ApartmentFacility', 'facility_id');
     }
 
+    
 
-    /**
+	/**
      * Apartments.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

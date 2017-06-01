@@ -1,7 +1,7 @@
  <?php
  /**
   * @SWG\Definition (
-  * definition="auth-group",
+  * definition="status",
   *     
   *     @SWG\Property(
   *          property="id",

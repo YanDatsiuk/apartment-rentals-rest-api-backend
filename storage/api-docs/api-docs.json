@@ -3416,6 +3416,250 @@
                     }
                 }
             }
+        },
+        "/images": {
+            "get": {
+                "tags": [
+                    "images"
+                ],
+                "description": "Get list of images",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "JWTAuthToken example - Bearer {token}",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "include[]",
+                        "in": "query",
+                        "description": "List of model relations with limit and offset parameter. Example: {relationName}:limit({limit}|{offset})",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi",
+                        "default": ""
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page number",
+                        "required": false,
+                        "type": "integer",
+                        "default": 1
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Items limit per page",
+                        "required": false,
+                        "type": "integer",
+                        "default": 10
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Requested resource collection"
+                    },
+                    "403": {
+                        "description": "Access forbidden"
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/error"
+                        }
+                    }
+                }
+            }
+        },
+        "/images/show/{id}": {
+            "get": {
+                "tags": [
+                    "images"
+                ],
+                "description": "Get specific image by Id",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "JWTAuthToken example - Bearer {token}",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "image with specified id"
+                    },
+                    "403": {
+                        "description": "Access forbidden"
+                    },
+                    "422": {
+                        "description": "Unprocessable entity"
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/error"
+                        }
+                    }
+                }
+            }
+        },
+        "/images/upload": {
+            "post": {
+                "tags": [
+                    "images"
+                ],
+                "description": "Upload image",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "x-app-authorization",
+                        "in": "header",
+                        "description": "JWTAuthToken example - Bearer token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "image",
+                        "in": "formData",
+                        "description": "file",
+                        "required": true,
+                        "type": "file",
+                        "default": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Created resource"
+                    },
+                    "403": {
+                        "description": "Access forbidden"
+                    },
+                    "default": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/images/update/{id}": {
+            "patch": {
+                "tags": [
+                    "images"
+                ],
+                "description": "Update specific image by Id",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "JWTAuthToken example - Bearer {token}",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "",
+                        "in": "body",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/image"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Updated entity"
+                    },
+                    "403": {
+                        "description": "Access forbidden"
+                    },
+                    "422": {
+                        "description": "Unprocessable entity"
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/error"
+                        }
+                    }
+                }
+            }
+        },
+        "/images/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "images"
+                ],
+                "description": "Delete specific image by Id",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "JWTAuthToken example - Bearer {token}",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Deleted entity"
+                    },
+                    "403": {
+                        "description": "Access forbidden"
+                    },
+                    "422": {
+                        "description": "Unprocessable entity"
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/error"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -3430,6 +3674,22 @@
                     "format": "int32"
                 },
                 "facility_id": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "apartment-image": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "apartment_id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "image_id": {
                     "type": "integer",
                     "format": "int32"
                 }
@@ -3620,6 +3880,26 @@
                 "description": {
                     "type": "string",
                     "format": "default"
+                }
+            }
+        },
+        "image": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "image_src": {
+                    "type": "string",
+                    "format": "default"
+                },
+                "created_at": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "format": "date-time"
                 }
             }
         },

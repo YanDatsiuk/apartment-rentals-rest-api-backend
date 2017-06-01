@@ -465,12 +465,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "5c1ad9f69f515c3d8177b64bdce0c6440ffe18cf"
+                "reference": "58f40845d8091b8cb768d6e3a49f685c8dff6928"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/5c1ad9f69f515c3d8177b64bdce0c6440ffe18cf",
-                "reference": "5c1ad9f69f515c3d8177b64bdce0c6440ffe18cf",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/58f40845d8091b8cb768d6e3a49f685c8dff6928",
+                "reference": "58f40845d8091b8cb768d6e3a49f685c8dff6928",
                 "shasum": ""
             },
             "require": {
@@ -481,11 +481,12 @@
             },
             "require-dev": {
                 "alcaeus/mongo-php-adapter": "^1.1",
+                "mongodb/mongodb": "^1.1",
                 "phpunit/phpunit": "^5.7",
                 "predis/predis": "~1.0"
             },
             "suggest": {
-                "alcaeus/mongo-php-adapter": "Required to use MongoDB driver"
+                "alcaeus/mongo-php-adapter": "Required to use legacy MongoDB driver"
             },
             "type": "library",
             "extra": {
@@ -530,7 +531,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2017-05-31T09:08:26+00:00"
+            "time": "2017-05-31T18:10:38+00:00"
         },
         {
             "name": "doctrine/collections",
@@ -1047,12 +1048,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "1fbc7cf6e89fe2cf720ecfe26b4912fb1bea2347"
+                "reference": "fa418fb7c04d418687940c6e0c71e078d928ae6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/1fbc7cf6e89fe2cf720ecfe26b4912fb1bea2347",
-                "reference": "1fbc7cf6e89fe2cf720ecfe26b4912fb1bea2347",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/fa418fb7c04d418687940c6e0c71e078d928ae6f",
+                "reference": "fa418fb7c04d418687940c6e0c71e078d928ae6f",
                 "shasum": ""
             },
             "require": {
@@ -1168,7 +1169,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-05-30T19:54:39+00:00"
+            "time": "2017-06-01T02:08:10+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -3052,12 +3053,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/YanDatsyuk/Laravel-REST-API-generator.git",
-                "reference": "a64b2de7948a6515174a148ba203c89703360fe4"
+                "reference": "cc0b3c72ba4cdb538659538151585aee7bb364be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/YanDatsyuk/Laravel-REST-API-generator/zipball/a64b2de7948a6515174a148ba203c89703360fe4",
-                "reference": "a64b2de7948a6515174a148ba203c89703360fe4",
+                "url": "https://api.github.com/repos/YanDatsyuk/Laravel-REST-API-generator/zipball/cc0b3c72ba4cdb538659538151585aee7bb364be",
+                "reference": "cc0b3c72ba4cdb538659538151585aee7bb364be",
                 "shasum": ""
             },
             "require": {
@@ -3097,7 +3098,7 @@
                 }
             ],
             "description": "Laravel REST API scaffolding.",
-            "time": "2017-05-31T08:49:08+00:00"
+            "time": "2017-06-01T11:45:13+00:00"
         },
         {
             "name": "tymon/jwt-auth",
@@ -3484,12 +3485,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "df4572ed62d6d39ed560caed75b33399dd0d1ba4"
+                "reference": "dc7a4e051dcd566fcc53a61d685fdaebac9f670e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/df4572ed62d6d39ed560caed75b33399dd0d1ba4",
-                "reference": "df4572ed62d6d39ed560caed75b33399dd0d1ba4",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/dc7a4e051dcd566fcc53a61d685fdaebac9f670e",
+                "reference": "dc7a4e051dcd566fcc53a61d685fdaebac9f670e",
                 "shasum": ""
             },
             "require": {
@@ -3526,7 +3527,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2017-05-31T09:38:54+00:00"
+            "time": "2017-05-31T14:16:10+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -3692,12 +3693,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "83a4e52aefb66e35c861c767da2e3e6abb9c0930"
+                "reference": "79db5dd907ee977039f77ac8471a739497463429"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/83a4e52aefb66e35c861c767da2e3e6abb9c0930",
-                "reference": "83a4e52aefb66e35c861c767da2e3e6abb9c0930",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/79db5dd907ee977039f77ac8471a739497463429",
+                "reference": "79db5dd907ee977039f77ac8471a739497463429",
                 "shasum": ""
             },
             "require": {
@@ -3747,7 +3748,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2017-05-17T11:25:27+00:00"
+            "time": "2017-05-31T16:22:32+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",

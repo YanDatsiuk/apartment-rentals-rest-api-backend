@@ -15,9 +15,11 @@ use Illuminate\Database\Eloquent\Model;
  * @property int|null $room_quantity
  * @property string|null $description
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\ApartmentFacility[] $apartmentFacilities
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\ApartmentImage[] $apartmentImages
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\Booking[] $bookings
  * @property-read \App\REST\Building|null $building
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\Facility[] $facilities
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\Image[] $images
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\Status[] $statuses
  * @property-read \App\REST\ApartmentType|null $type
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\REST\User[] $users
@@ -96,6 +98,16 @@ class Apartment extends Model
     }
 
 	/**
+     * apartmentImages.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function apartmentImages()
+    {
+        return $this->hasMany('App\REST\ApartmentImage', 'apartment_id');
+    }
+
+	/**
      * bookings.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -119,6 +131,20 @@ class Apartment extends Model
             'apartment_facilities',
             'apartment_id',
             'facility_id');
+    }
+
+	/**
+     * Images.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function images()
+    {
+        return $this->belongsToMany(
+            'App\REST\Image',
+            'apartment_images',
+            'apartment_id',
+            'image_id');
     }
 
 	/**

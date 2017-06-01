@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
 		$this->call(\TMPHP\RestApiGenerators\Database\Seeds\AuthActionGroupsTableSeeder::class);
 		$this->call(\TMPHP\RestApiGenerators\Database\Seeds\AuthGroupUsersTableSeeder::class);
 
-        // $this->call(UsersTableSeeder::class);
+        $this->call(ApartmentTypesSeeder::class);
+        $this->call(FacilitiesSeeder::class);
+        $this->call(StatusesSeeder::class);
     }
 }

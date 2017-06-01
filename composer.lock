@@ -679,12 +679,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "9d696ac2ff9391c0dc5328170667248de10e0606"
+                "reference": "ec3e510741e7d2c39cb8ca162894bb1ba6626d0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/9d696ac2ff9391c0dc5328170667248de10e0606",
-                "reference": "9d696ac2ff9391c0dc5328170667248de10e0606",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/ec3e510741e7d2c39cb8ca162894bb1ba6626d0d",
+                "reference": "ec3e510741e7d2c39cb8ca162894bb1ba6626d0d",
                 "shasum": ""
             },
             "require": {
@@ -744,7 +744,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2017-05-21T18:53:37+00:00"
+            "time": "2017-06-01T12:43:59+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -1048,12 +1048,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "fa418fb7c04d418687940c6e0c71e078d928ae6f"
+                "reference": "13dc9524656a07ecd8b9f7291fcd70aad13491e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/fa418fb7c04d418687940c6e0c71e078d928ae6f",
-                "reference": "fa418fb7c04d418687940c6e0c71e078d928ae6f",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/13dc9524656a07ecd8b9f7291fcd70aad13491e0",
+                "reference": "13dc9524656a07ecd8b9f7291fcd70aad13491e0",
                 "shasum": ""
             },
             "require": {
@@ -1169,7 +1169,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-06-01T02:08:10+00:00"
+            "time": "2017-06-01T13:03:29+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -3053,12 +3053,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/YanDatsyuk/Laravel-REST-API-generator.git",
-                "reference": "cc0b3c72ba4cdb538659538151585aee7bb364be"
+                "reference": "fea23ed7cf6808fcd246c872dbf9816bce85a38a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/YanDatsyuk/Laravel-REST-API-generator/zipball/cc0b3c72ba4cdb538659538151585aee7bb364be",
-                "reference": "cc0b3c72ba4cdb538659538151585aee7bb364be",
+                "url": "https://api.github.com/repos/YanDatsyuk/Laravel-REST-API-generator/zipball/fea23ed7cf6808fcd246c872dbf9816bce85a38a",
+                "reference": "fea23ed7cf6808fcd246c872dbf9816bce85a38a",
                 "shasum": ""
             },
             "require": {
@@ -3098,7 +3098,7 @@
                 }
             ],
             "description": "Laravel REST API scaffolding.",
-            "time": "2017-06-01T11:45:13+00:00"
+            "time": "2017-06-01T13:03:56+00:00"
         },
         {
             "name": "tymon/jwt-auth",

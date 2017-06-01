@@ -11,7 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
 		$this->call(\TMPHP\RestApiGenerators\Database\Seeds\AuthActionsTableSeeder::class);
 		$this->call(\TMPHP\RestApiGenerators\Database\Seeds\AuthGroupsTableSeeder::class);
 		$this->call(\TMPHP\RestApiGenerators\Database\Seeds\AuthActionGroupsTableSeeder::class);
